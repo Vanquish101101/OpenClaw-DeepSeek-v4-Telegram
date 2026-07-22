@@ -1,11 +1,11 @@
 ﻿version: '3.8'
 
 services:
-  openclaw-bot:
+  openclaw-deepseek-v4-telegram:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: openclaw-bot
+    container_name: OpenClaw-DeepSeek-v4-Telegram
     restart: always
     ports:
       - "18789:18789"

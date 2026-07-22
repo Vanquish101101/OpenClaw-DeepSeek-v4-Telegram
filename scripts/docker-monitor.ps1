@@ -1,6 +1,6 @@
 $ErrorActionPreference = "Continue"
 
-$containerName = "openclaw-bot"
+$containerName = "OpenClaw-DeepSeek-v4-Telegram"
 $chatId        = "1064521326"
 $tokenFile     = "$env:USERPROFILE\.openclaw\secrets\telegram-bot-token.txt"
 $token         = (Get-Content $tokenFile -Raw -ErrorAction SilentlyContinue).Trim()
