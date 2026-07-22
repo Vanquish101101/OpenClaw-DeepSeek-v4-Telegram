@@ -1,0 +1,23 @@
+﻿version: '3.8'
+
+services:
+  openclaw-bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: openclaw-bot
+    restart: always
+    ports:
+      - "18789:18789"
+    environment:
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY}
+    volumes:
+      - openclaw-memory:/root/.openclaw/memory
+      - openclaw-sessions:/root/.openclaw/agents
+      - openclaw-workspace:/root/.openclaw/workspace
+
+volumes:
+  openclaw-memory:
+  openclaw-sessions:
+  openclaw-workspace:

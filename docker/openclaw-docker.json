@@ -1,0 +1,52 @@
+﻿{
+  "agents": {
+    "defaults": {
+      "workspace": "/root/.openclaw/workspace",
+      "model": { "primary": "deepseek/deepseek-v4-pro" },
+      "models": { "deepseek/deepseek-v4-pro": {} }
+    }
+  },
+  "gateway": {
+    "mode": "local",
+    "auth": { "mode": "token", "token": "84be3814652aa95686a23c65077b6eade2d612c777e3acd4" },
+    "port": 18789,
+    "bind": "lan",
+    "tailscale": { "mode": "off", "resetOnExit": false }
+  },
+  "session": { "dmScope": "per-channel-peer" },
+  "tools": { "profile": "coding", "alsoAllow": ["message"] },
+  "auth": {
+    "profiles": {
+      "deepseek:manual": { "provider": "deepseek", "mode": "api_key" }
+    }
+  },
+  "plugins": { "entries": { "telegram": { "enabled": true } } },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "tokenFile": "/root/.openclaw/secrets/telegram-bot-token.txt",
+      "allowFrom": ["1064521326"]
+    }
+  },
+  "commands": { "ownerAllowFrom": ["telegram:1064521326"] },
+  "mcp": {
+    "servers": {
+      "mcp-market": {
+        "url": "https://link.mcpmarket.com/vfvf6462/toolkits/my-toolkit/mcp",
+        "transport": "streamable-http",
+        "headers": { "Authorization": "Bearer sk_user_MwO0bNeG_P-j2z-GwKClZT25QqIptiIu" },
+        "connectTimeout": 10,
+        "timeout": 30
+      },
+      "miro": {
+        "url": "https://link.mcpmarket.com/vfvf6462/miro/mcp",
+        "transport": "streamable-http",
+        "headers": { "Authorization": "Bearer sk_user_MwO0bNeG_P-j2z-GwKClZT25QqIptiIu" },
+        "connectTimeout": 10,
+        "timeout": 30
+      }
+    }
+  },
+  "meta": { "lastTouchedVersion": "2026.6.1" },
+  "wizard": { "lastRunAt": "2026-06-07T19:25:19.387Z", "lastRunVersion": "2026.6.1", "lastRunCommand": "doctor", "lastRunMode": "local" }
+}
