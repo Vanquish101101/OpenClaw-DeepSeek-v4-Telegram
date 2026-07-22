@@ -17,7 +17,7 @@ try {
 } catch { }
 
 if (-not $dockerRunning) {
-    $msg = "Docker Desktop ne zapushen!`n`nZapusti Docker Desktop, zatem:`ncd docker`ndocker-compose up -d"
+    $msg = "Docker Desktop ne zapushen!`n`nZapusti Docker Desktop, zatem:`ncd 'OpenClaw + DeepSeek v4 + Telegram'`ndocker-compose up -d"
     Invoke-RestMethod -Uri "https://api.telegram.org/bot$token/sendMessage" `
         -Method Post -Body @{ chat_id = $chatId; text = $msg } | Out-Null
     Write-Host "[ALERT] Docker not running - Telegram notified" -ForegroundColor Red
@@ -26,7 +26,7 @@ if (-not $dockerRunning) {
 
 $status = docker inspect --format="{{.State.Running}}" $containerName 2>&1
 if ($status -ne "true") {
-    $msg = "Konteyner openclaw-bot ne zapushchen!`n`nDlya zapuska:`ncd docker`ndocker-compose up -d"
+    $msg = "Konteyner openclaw-bot ne zapushchen!`n`nDlya zapuska:`ncd 'OpenClaw + DeepSeek v4 + Telegram'`ndocker-compose up -d"
     Invoke-RestMethod -Uri "https://api.telegram.org/bot$token/sendMessage" `
         -Method Post -Body @{ chat_id = $chatId; text = $msg } | Out-Null
     Write-Host "[ALERT] Container not running - Telegram notified" -ForegroundColor Red

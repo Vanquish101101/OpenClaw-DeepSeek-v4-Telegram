@@ -3,7 +3,7 @@
 ## Первый запуск (один раз)
 
 ```powershell
-cd "C:\Users\Unknown\Documents\Projects\OpenClaw + DeepSeek v4 + Telegram\docker"
+cd "C:\Users\Unknown\Documents\Projects\OpenClaw + DeepSeek v4 + Telegram\OpenClaw + DeepSeek v4 + Telegram"
 docker-compose build
 docker-compose up -d
 ```

@@ -7,4 +7,4 @@ logs/
 .claude/stop_now
 .claude/channels/
 .claude/**/*.env
-docker/.env
+OpenClaw + DeepSeek v4 + Telegram/.env
